@@ -1,6 +1,10 @@
-# Welcome to Remix!
+# Nowcasting Alerts
 
-- [Remix Docs](https://remix.run/docs)
+Prototype for a Nowcasting Alerts service. We use a Cloudflare Workers cron to fetch the most recent Nowcasting and PV_Live forecasts, and check if there's a deviation in values (currently hard coded to 0.5GW). If there is, we make a POST request to all configured alert URLs.
+
+This app is built with [Remix](https://remix.run/docs) and deployed to [Cloudflare Pages](https://developers.cloudflare.com/pages).
+
+There is a sister repo 
 
 ## Development
 
@@ -23,7 +27,7 @@ Create a new Cloudflare Pages project, connect this repo.
 Set framework to Remix.
 Set env var `NODE_VERSION = v16.7.0`
 
-### Setup KV
+### Setup KV for production
 
 Data for this app is stored using Cloudflare key-value storage
 Goto main nav Workers > KV.
